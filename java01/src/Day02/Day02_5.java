@@ -8,19 +8,30 @@ public class Day02_5 {
 		
 		Scanner scanner = new Scanner(System.in);
 	
-//	
-//		System.out.println("금액 : ");
-//	
-//
-//		int 금액 = scanner.nextInt();
-//		
-//		System.out.println(" 입력한 금액:"+ 금액);
-//		
-//		System.out.println("십만원:"+ (금액/100000)+ "장");
-//	
-//		금액 -= (금액/100000)*100000;
-//		
-//		System.out.println("십만원 제외 금액 : "+ 금액);
+
+	System.out.println("금액 : ");
+
+
+	int 금액 = scanner.nextInt();
+	
+	System.out.println(" 입력한 금액:"+ 금액);
+	
+	System.out.println("십만원:"+ (금액/100000)+ "장");
+
+	금액 -= (금액/100000)*100000;
+	
+	System.out.println("십만원 제외 금액 : "+ 금액);
+	System.out.println("만원 : "+ (금액/10000)+"장");
+	
+	금액 -= (금액/10000)*10000;
+	
+	System.out.println("만원 제외 금액 : "+ 금액);
+	System.out.println("천원 : "+ (금액/1000)+"장");
+	
+	금액 -= (금액/1000)*1000;
+	
+	System.out.println("백원 : "+ (금액/100)+"개");
+	
 	
 	
 		//문제3 
