@@ -6,7 +6,7 @@ public class Day03_6 {
 public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in); // 입력객체
-		
+		// ***********문제 다시 
 		// 별문제1 : 입력받은 수 만큼 * 출력
 		System.out.print(" 문제1) 별개수 : "); int s1 = scanner.nextInt();
 		for( int i = 1 ; i<=s1 ; i++ ) {
