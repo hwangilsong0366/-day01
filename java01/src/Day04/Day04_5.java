@@ -3,7 +3,7 @@ package Day04;
 import java.util.Random;
 import java.util.Scanner;
 
-public class test {// cs
+public class Day04_5 {// cs
 	
 	/* 로또 판별기 
 		1. 사용자 6개 수 입력받기 -> 배열 저장 
