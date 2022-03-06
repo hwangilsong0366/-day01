@@ -52,7 +52,7 @@ public class Practice05 {
 					 System.out.println("콜라\t"+콜라+"\t"+(콜라*100));
 					 
 				 }
-				 if(환타!=0) {
+				 if (환타!=0) {
 					 System.out.println("환타\t"+환타+"\t"+(환타*200));
 					 
 				 }
