@@ -19,9 +19,14 @@ public class Day06_2 {
 		System.out.println("최고속도:" + myCar.maxSpeed);
 		
 		//3.객체내 필드 값 변경
-		myCar.speed= 60;
 		
-		Car s
+		myCar.speed= 60;
+		System.out.println("수정된 속도 : " + myCar.speed );
+		
+		Car yourcar = new Car();
+	System.out.println(" 2번 자동차 :"+ yourcar.speed );
+	
 	}
+	
 	
 }
