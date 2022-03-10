@@ -3,8 +3,7 @@ package Day06;
 public class Day06_4 {
 	
 	public static void main(String[] args) {
-		
-
+	
 		Car2 yourCar = new Car2();
 		
 		Car2 myCar =new Car2("검정",300);
@@ -13,4 +12,4 @@ public class Day06_4 {
 				// 3000 > cc 변수저장
 
 	}
-}
+} // 

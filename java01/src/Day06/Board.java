@@ -2,7 +2,7 @@ package Day06;
 
 import javax.print.DocFlavor.STRING;
 
-public class Board {
+public class Board { // c s
 	
 	// board 클래스 
 	
@@ -40,4 +40,4 @@ public class Board {
 	
 	//3. 메소드
 
-}
+} // c e

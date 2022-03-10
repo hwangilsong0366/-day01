@@ -4,6 +4,7 @@ public class Car {
 	
 	//car 라는 클래스 설계
 	
+	//맴버 구성
 	// 1. 필드
 	String company = "현대자동차";
 	//자료형 / 클래스명 변수명 = 데이터;

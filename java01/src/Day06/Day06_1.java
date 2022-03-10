@@ -13,15 +13,26 @@ public class Day06_1 {
 		// 회원가입, 아이디찾기, 비밀번호 찾기, 회원탈퇴, 로그인 > 메소드[행동]
 				// 서로 다른 회원 생성[ 회원1, 회원2]
 	
-	Student student = new Student();
+	public static void main(String[] args) {
+		
+	
+	
+			tudent student = new Student();
 
 	// 1. student : 정의된 클래스명
 	// 2.  student : 객체명[아무거나] : 추천[클래스명 소문자]
 	// 3. new 연산자 : 메모리(저장공간) 생성
-	
+	// 4. Student() : 생성자명( )
+			// * 객체 생성시 4가지 필요!! 
+			System.out.println(" s1 변수가 Student 객체를 참조합니다.");
+			System.out.println( s1 );
+			
+			Student s2 = new Student();
+			System.out.println(" s2 변수가 또 다른 Student 객체를 참조합니다. ");
+			System.out.println( s2 );
 	
 	
 
 	}
 	
-
+}

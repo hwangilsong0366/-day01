@@ -2,7 +2,7 @@ package Day06;
 
 import java.util.Scanner;
 
-public class Day06_6 { // c s 
+public class Day06_6_비회원제게시판 { // c s 
 	
 	// 비회원제 게시판 [ 클래스 버전 ]
 		// 0. 게시물 설계 => 클래스 선언 
