@@ -3,7 +3,7 @@ package Day08;
 import java.util.Scanner;
 
 
-public class BankApplication {
+ static public class BankApplication {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
@@ -42,10 +42,10 @@ public class BankApplication {
 		} // we
 			
 			
-		}// me
+	}// me
 		
 		
 		
-	}// w e
+}// w e
 
 
