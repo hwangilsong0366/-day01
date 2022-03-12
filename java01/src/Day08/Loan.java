@@ -1,18 +1,15 @@
 package Day08;
 
-
-
-
-
-
- public class Loan {
+import java.util.Scanner;
+import Day08.Loan;
+public class Loan {
 	
 	// 1. 필드
-	private double 이자; 
+	private double 이자;  
 	private int 원금; 
 	private int 빌린금액; 
-	private String 대출상품명;	
-	private String id ;
+	private String 대출상품명;	// 대출 상품이름
+	private String id ; // 대출인 id 
 	private String 상환여부;
 	boolean brental;
 	//2. 생성자
@@ -28,44 +25,46 @@ package Day08;
 		this.상환여부 = 상환여부;
 		
 		}
-
-	
-	
-
-	
-		
 	
 	// 3. 메소드 
+								void 대출목록(String loginid) {
+							System.out.println("------ 대출 목록 페이지 ------");
+								System.out.println("상품 이름\t상품 한도\t신청 가능 여부\n");
+								System.out.println(loname+"\t"+locontent+"\t"+lolimits+"\t"+loan);
+								int j = 0; for(Loanclass temp : Mobilebank.loanclass) {
+									if(temp == null) { //빈공간 찾기
+										Mobilebank.loanclass[j] = loanclass; return true;} j++;
+								} return false; }
+			
+								
+								
+					void 대출신청(String id) {
+						System.out.println("------ 대출 신청 페이지 ------");
+						System.out.println("신청할 대출 상품 : "); String 대출상품명 = BankApplication.scanner.next();
+						for(Loan temp : BankApplication.loan) {
+							if(temp != null && temp.대출상품명.equals(대출상품명) && temp.loan) {
+								System.out.println("알림) 해당 대출을 신청합니다."); temp.loan = false; return;
+							} else {System.out.println("알림) 현재 대출 신청이 불가능한 상태입니다."); return;}
+							System.out.println("알림) 동일한 상품이 존재하지 않습니다.");}	}
+					
 	
-	void 대출상품등록(){
-		System.out.println("대출상품 등록페이지");
-		System.out.println("대출상품명: "); String 대출상품명 = BankApplication.scanner.next();
-		System.out.println("대출이자설정: "); double 이자 = BankApplication.scanner.nextDouble();
-		
-	}
+				void 대출등록(String loginid) { System.out.println("------ 대출 등록 페이지 ------");
+				
+				System.out.print(" 등록할 대출 상품 이름 : "); String loname = BankApplication.scanner.next();
+				System.out.print(" 등록할 대출 상품 설명 : "); String locontent = BankApplication.scanner.next();
+				System.out.print(" 등록할 대출 상품 한도 : "); String lolimits = BankApplication.scanner.next();
+				System.out.print(" 등록할 대출 상품 기간 : "); String years = BankApplication.scanner.next();
+			
+			
+				//배열 대입
+				int i = 0;
+				for(Loan temp : BankApplication.loan) {
+					if (temp == null) {	BankApplication.loanclass[i] = loan;
+						System.out.println("알림) 대출 등록이 완료되었습니다.");
+						return;} i++;}
+				}
+				
 
-	void 대출신청() {			 
-	        	System.out.println("---------대출신청 페이지-------------");
-	        	System.out.println("대출신청"); String isbn = BankApplication.scanner.next();
-	        	for(Loan temp : BankApplication.Loan) {
-	        		
-	        		if(temp != null && temp.대출상품명.equals(대출상품명)){
-	        			if(temp.brental) {
-	        				System.out.println("대출이 가능합니다.");
-	        				
-	        			}else {
-	        				System.out.println("알림]] 대출이 불가능합니다.");
-	        				return;
-	        			}
-	        			
-	        		}
-	        		
-	        	}
-	        }
-	        void 도서반납() {
-	
-	}
-	void 상환여부() {System.out.println("대출상환여부확인 ");}
 	
 	
 }

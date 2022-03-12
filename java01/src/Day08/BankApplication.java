@@ -1,13 +1,13 @@
 package Day08;
 
 import java.util.Scanner;
+ import Day08.Loan;
 
-
- static public class BankApplication {
+   public class BankApplication {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		
+		Loan laLoan = new Loan();
 		
 		while(true) {
 		System.out.println("-----------대출 메뉴입니다-----------");
