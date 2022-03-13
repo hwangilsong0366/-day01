@@ -1,71 +1,98 @@
 package Day08;
 
-import java.util.Scanner;
-import Day08.Loan;
+import Day07.Book;
+import Day07.Day07_5_BookApplication;
+
 public class Loan {
+	//필드
+	String 대출이름;
+	double 이자;
+	String id;
 	
-	// 1. 필드
-	private double 이자;  
-	private int 원금; 
-	private int 빌린금액; 
-	private String 대출상품명;	// 대출 상품이름
-	private String id ; // 대출인 id 
-	private String 상환여부;
-	boolean brental;
-	//2. 생성자
-	 public Loan() {}
-	 
-	public Loan(double 이자, int 원금, int 빌린금액, String 대출상환일, String 대출상환액, String id,String 상환여부,boolean brental) {
+	
+	//생성자
+	public Loan() {}
+		public Loan(String 대출이름, double 이자, String id) {
+		
+		this.대출이름 = 대출이름;
 		
 		this.이자 = 이자;
-		this.원금 = 원금;
-		this.빌린금액 = 빌린금액;	
-		this.대출상품명 = 대출상품명;
 		this.id = id;
-		this.상환여부 = 상환여부;
-		
+	}
+	
+	public void 대출목록() {
+		System.out.println(" ------- 대출 페이지 -------");
+		System.out.println("대출이름\t\t금액\t이자\t누가신청했는가");
+		for( Loan temp1 : Day08_5.BankApplication) {
+			if( temp1 != null ) { 
+				System.out.println( temp1.대출이름 +"\t" + temp1.이자 +"\t" + temp1.id);
+			}
 		}
+	}
 	
-	// 3. 메소드 
-								void 대출목록(String loginid) {
-							System.out.println("------ 대출 목록 페이지 ------");
-								System.out.println("상품 이름\t상품 한도\t신청 가능 여부\n");
-								System.out.println(loname+"\t"+locontent+"\t"+lolimits+"\t"+loan);
-								int j = 0; for(Loanclass temp : Mobilebank.loanclass) {
-									if(temp == null) { //빈공간 찾기
-										Mobilebank.loanclass[j] = loanclass; return true;} j++;
-								} return false; }
-			
-								
-								
-					void 대출신청(String id) {
-						System.out.println("------ 대출 신청 페이지 ------");
-						System.out.println("신청할 대출 상품 : "); String 대출상품명 = BankApplication.scanner.next();
-						for(Loan temp : BankApplication.loan) {
-							if(temp != null && temp.대출상품명.equals(대출상품명) && temp.loan) {
-								System.out.println("알림) 해당 대출을 신청합니다."); temp.loan = false; return;
-							} else {System.out.println("알림) 현재 대출 신청이 불가능한 상태입니다."); return;}
-							System.out.println("알림) 동일한 상품이 존재하지 않습니다.");}	}
+	void 대출등록() {
+		System.out.println(" ------- 대출등록 페이지 -------");
+		System.out.print(" 대출이름 : ");	String 대출이름 =Day08_5.sc.next();
+		System.out.print(" 금액 : ");	int how =Day08_5.sc.nextInt();
+		System.out.print(" 이자(%) : ");	double 이자 =Day08_5.sc.nextDouble();
+
+		
+
+		Loan loan = new Loan(대출이름,  이자, null);
+
+		int i = 0;
+		for( Loan temp4 : Day08_5.ls) {
+			if(temp4 == null ) {
+				Day08_5.ls[i]=loan;
+				System.out.println(" 알림]] 대출등록이 되었습니다. ");
+				return; 
+			}
+			i++; 
+		}
+	}
+	void 대출신청() {
+		Member member = new Member();
+		Account account = new Account();
+		account.balance = member.getMonney();
+
+		System.out.println(" ------- 대출신청 페이지 -------");
+		System.out.println("어떤거 대출할거임...,,,@@");
+		System.out.print(" 대출이름 : ");	String 대출이름 =Day08_5.sc.next();
+		for( Loan temp4  : Day08_5.ls) {
+			if(temp4!=null && temp4.대출이름.equals(대출이름)) {
+				temp4.id = Member.yourName;
+				System.out.println("대출성공");
+				account.balance += temp4.how;
+				member.money(account.balance);
+				member.getMonney();
+
+				break;
+			}
+		}
+	}
+	void 대출상환() {
+		Member member = new Member();
+		Account account = new Account();
+		account.balance = member.getMonney();
+
+		System.out.println(" ------- 대출상환 페이지 -------");
+		System.out.println("어떤거 대출상환할거임.!?..,,,@@");
+		System.out.print(" 대출이름 : ");	String 대출이름 =Day08_5.sc.next();
+		for( Loan temp4  : Day08_5.ls) {
+			if(temp4!=null && temp4.대출이름.equals(대출이름)) {
+				if(account.balance>=(temp4.how+temp4.how*temp4.이자)) {
+					temp4.id = Member.yourName;
+					System.out.println("대출성공");
 					
-	
-				void 대출등록(String loginid) { System.out.println("------ 대출 등록 페이지 ------");
-				
-				System.out.print(" 등록할 대출 상품 이름 : "); String loname = BankApplication.scanner.next();
-				System.out.print(" 등록할 대출 상품 설명 : "); String locontent = BankApplication.scanner.next();
-				System.out.print(" 등록할 대출 상품 한도 : "); String lolimits = BankApplication.scanner.next();
-				System.out.print(" 등록할 대출 상품 기간 : "); String years = BankApplication.scanner.next();
-			
-			
-				//배열 대입
-				int i = 0;
-				for(Loan temp : BankApplication.loan) {
-					if (temp == null) {	BankApplication.loanclass[i] = loan;
-						System.out.println("알림) 대출 등록이 완료되었습니다.");
-						return;} i++;}
+					member.money(account.balance);
+					member.getMonney();
 				}
-				
+				else {
+					System.out.println("))현금이 없습니다");
+				}
 
-	
-	
+				break;
+			}
+		}
+	}
 }
-
